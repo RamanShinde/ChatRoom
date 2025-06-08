@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Spring Boot Chat App</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
-    <script src="chat.js" defer></script>
+<meta charset="UTF-8">
+<title>Spring Boot Chat App</title>
+<link rel="stylesheet" href="/index.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+<script src="/chat.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="login-screen" id="loginScreen">
-            <h2>Join Chat</h2>
-            <input type="text" id="username" placeholder="Enter your name" />
-            <button onclick="connect()">Connect</button>
-        </div>
+	<div class="container">
+		<div class="login-screen" id="loginScreen">
+			<h2>Join Chat</h2>
+			<input type="text" id="username" placeholder="Enter your name" />
+			<button onclick="connect()">Connect</button>
+		</div>
 
-        <div class="chat-screen" id="chat" style="display: none;">
-            <div class="chat-header">Chat Room</div>
-            <div class="chat-box" id="messages"></div>
-            <div class="chat-input">
-                <input type="text" id="messageInput" placeholder="Type your message..." />
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-    </div>
+		<div class="chat-screen" id="chat" style="display: none;">
+			<div class="chat-header">Chat Room</div>
+			<div class="chat-box" id="messages"></div>
+			<div class="chat-input">
+				<input type="text" id="messageInput"
+					placeholder="Type your message..." />
+				<button onclick="sendMessage()">Send</button>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
