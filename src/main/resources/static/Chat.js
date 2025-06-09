@@ -6,7 +6,7 @@ function connect() {
 
     if (!username) return;
 
-    const socket = new SockJS("/ws");
+    const socket = new SockJS(window.location.origin + "/ws");
     stompClient = Stomp.over(socket);
 
     stompClient.connect({}, function () {
