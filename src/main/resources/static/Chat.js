@@ -13,7 +13,7 @@ function connect() {
     return;
   }
 
-  const socket = new SockJS(window.location.origin + '/ws');
+  const socket = new SockJS('https://chatroom-production-bd54.up.railway.app/ws');
   stompClient = Stomp.over(socket);
 
   stompClient.connect({}, function () {
