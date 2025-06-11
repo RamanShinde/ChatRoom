@@ -1,0 +1,22 @@
+# Build stage (use official Maven/Java 17 image)
+FROM maven:3.8.5-eclipse-temurin-17 AS build
+WORKDIR /app
+
+# Copy only necessary files for caching efficiency
+COPY pom.xml .
+COPY src ./src
+
+# Build the JAR (with cache optimization)
+RUN ./mvnw clean package -DskipTests
+
+# Runtime stage (use smaller JRE-only image)
+FROM eclipse-temurin:17-jre-jammy
+WORKDIR /app
+
+# Copy JAR from build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Render-specific settings
+EXPOSE 8080
+ENV PORT=8080
+CMD ["java", "-jar", "app.jar", "--server.forward-headers-strategy=framework"]
