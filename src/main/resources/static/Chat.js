@@ -35,8 +35,8 @@ function connect() {
   }
 
   // Automatically use current host (localhost or deployed)
-  const socket = new SockJS(window.location.origin + '/ws');
-  stompClient = Stomp.over(socket);
+  const socket = new SockJS('./ws'); 
+    stompClient = Stomp.over(socket);
 
   stompClient.connect({}, function () {
     // Switch UI

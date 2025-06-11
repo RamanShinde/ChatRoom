@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "pom.xml",
+      "use": "@railway/java"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
