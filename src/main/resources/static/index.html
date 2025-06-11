@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <title>Chat App</title>
+
+    <!-- favicon.ico should live at src/main/resources/static/favicon.ico -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- absolute path to CSS in static/ -->
     <link rel="stylesheet" href="/index.css" />
+
+    <!-- external libs -->
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
 </head>
@@ -24,6 +30,8 @@
             </div>
         </div>
     </div>
-    <script src="chat.js" defer></script>
+
+    <!-- absolute path to JS in static/ -->
+    <script src="/chat.js" defer></script>
 </body>
 </html>
